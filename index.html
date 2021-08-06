@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>OpenWeatherMap Api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Search for a Country you like</h1>
+
+    <div class="input">
+        <input id="search" type="text" placeholder="Enter the Country Name....." class="input_text">
+        <button type="submit" class="submit"><i class=" fa fa-search"></i></button>
+
+        <script>
+            function activePlacesSearch() {
+                var input = document.getElementById('search');
+                var autocomplete = new google.maps.places.Autocomplete(input);
+            }
+        </script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo9rBwxgF3-88IBanCpMvTzU-Rt2OeUsA&libraries=places&callback=activePlacesSearch">
+        </script>
+    </div>
+    <div id="main-container">
+        <div id="flag-container">
+            <img src="" alt="Country Flag here">
+        </div>
+        <div id="info-container">
+            <select id="countries"></select>
+            <p>Capital: <span id="capital"></span></p>
+            <p>Dialing Code: <span id="dialing-code"></span></p>
+            <p>Population: <span id="population"></span></p>
+            <p>Currencies: <span id="currencies"></span></p>
+            <p class="currency"></p>
+            <p>Region: <span id="region"></span></p>
+            <img class="temp-icon" src="sun.svg" alt="weather image comes here">
+            <p class="temp"></p>
+            <p class="desc"></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
